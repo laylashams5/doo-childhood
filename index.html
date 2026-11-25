@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ذكريات الطفولة</title>
+<meta name="description" content="كتاب التلوين ذكريات الطفولة من DoO بشكل ثلاثي الأبعاد: قلّب الصفحات ولوّن الرسمات المجسمة.">
+<meta name="theme-color" content="#e9893f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234b1067'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23ff6c2c' stroke-width='5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+<header class="top">
+  <button class="brand" id="home" aria-label="غلاف الكتاب"><img alt="DoO"></button>
+  <button class="pill" id="openList">كل الصفحات</button>
+</header>
+<div class="start" id="start">
+  <button class="cta" id="openBook">افتح الكتاب</button>
+  <p>اسحب لتقليب الصفحات، والمس الرسمة لتلوّنها</p>
+</div>
+<nav class="dock" id="dock" aria-label="تصفح الكتاب">
+  <div class="chips" id="chips"></div>
+  <div class="row">
+    <button class="nav" id="prev" aria-label="الصفحة السابقة"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    <button class="cta add" id="add">لوّن الصفحة</button>
+    <button class="nav" id="next" aria-label="الصفحة التالية"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  </div>
+</nav>
+<div class="lookbar" id="lookbar">
+  <p id="prog"></p>
+  <div class="pal" id="pal" role="group" aria-label="الألوان"></div>
+  <div class="acts">
+    <button class="pill" id="closeLook">رجوع</button>
+    <button class="pill" id="undo">تراجع</button>
+    <button class="pill hot" id="auto">لوّنها لي</button>
+    <button class="pill" id="wipe">مسح</button>
+    <button class="pill" id="save">حفظ</button>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<aside class="sheet" id="list" role="dialog" aria-modal="true" aria-label="كل الصفحات" inert>
+  <div class="sheetHead"><h2>كل الصفحات</h2><button class="x" data-close aria-label="إغلاق">×</button></div>
+  <div class="sheetBody" id="listBody"></div>
+</aside>
+<p class="sr" aria-live="polite" id="live"></p>
+<noscript>الكتاب يحتاج JavaScript.</noscript>
+<script src="app.js"></script>
+</body>
+</html>
