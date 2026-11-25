@@ -26,7 +26,7 @@ button:focus-visible{outline:3px solid var(--rust);outline-offset:3px}
 body:not(.closed) .start{opacity:0;transform:translateY(12px);pointer-events:none;visibility:hidden}
 .dock{position:fixed;inset:auto 0 0 0;padding:26px 0 calc(16px + env(safe-area-inset-bottom));display:grid;gap:12px;justify-items:center;transition:opacity .35s var(--out),transform .35s var(--out);z-index:4;pointer-events:none}
 .dock>*{pointer-events:auto}
-body.closed .dock,body.looking .dock,body.looking .top{opacity:0;transform:translateY(14px);pointer-events:none;visibility:hidden}
+body.closed .dock,body.looking .dock,body.looking .brand,body.looking #openList{opacity:0;transform:translateY(14px);pointer-events:none;visibility:hidden}
 .chips{display:flex;gap:2px;max-width:calc(100% - 24px);overflow-x:auto;padding:4px;background:var(--paper);border-radius:999px;scrollbar-width:none;overscroll-behavior-x:contain}
 .chips::-webkit-scrollbar{display:none}
 .chips button{flex:none;min-height:44px;padding:0 14px;border-radius:999px;font-size:14px;transition:transform .16s var(--out),background .2s,color .2s}
@@ -78,3 +78,6 @@ body.looking .lookbar>*{pointer-events:auto}
 @media (max-width:430px){.acts{gap:6px}.acts .pill{padding:0 12px}}
 @media (max-width:350px){.acts .pill{padding:0 9px;font-size:13px}}
 @media (max-height:520px) and (orientation:landscape){.lookbar{padding-bottom:6px;gap:2px}.lookbar p{display:none}.acts .pill{min-height:40px}}
+.ic{width:46px;padding:0;display:grid;place-items:center}
+.ic svg{width:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic[aria-pressed=true] .mt,.ic[aria-pressed=false] .wv{display:none}
